@@ -1,0 +1,81 @@
+/* •var declaration
+-- Function-scoped or globally-scoped.
+-- Variables declared with var are hoisted to the top of their scope and initialized with undefined.
+-- Can be re-declared within the same scope.
+*/
+
+// EXAMPLE CODE
+/*
+
+function exampleVar() {
+    console.log(x); // undefined (due to hoisting)
+    var x = 10;
+    console.log(x); // 10
+
+    if (true) {
+        var x = 20; // Same variable as above
+        console.log(x); // 20
+    }
+
+    console.log(x); // 20 (same variable as above)
+}
+exampleVar();
+
+*/
+
+
+/* •let declaration
+-- Block-scoped (within {} braces).
+-- Variables declared with let are hoisted but not initialized. Accessing them before declaration results in a ReferenceError.
+-- Cannot be re-declared within the same scope.*/
+
+//EXAMPLE CODE
+
+/*
+function exampleLet() {
+    // console.log(y); // ReferenceError (due to temporal dead zone)
+    let y = 10;
+    console.log(y); // 10
+
+    if (true) {
+        let y = 20; // Different variable than above
+        console.log(y); // 20
+    }
+
+    console.log(y); // 10 (different variable than inside if block)
+}
+exampleLet();
+*/
+
+/* •const declaration
+-- Block-scoped (within {} braces).
+-- Variables declared with const are hoisted but not initialized. Accessing them before declaration results in a ReferenceError.
+-- Cannot be re-declared or reassigned within the same scope. Must be initialized at the time of declaration.*/
+
+// EXAMPLE CODE
+
+/*
+function exampleConst() {
+    // console.log(z); // ReferenceError (due to temporal dead zone)
+    const z = 10;
+    console.log(z); // 10
+
+    if (true) {
+        const z = 20; // Different variable than above
+        console.log(z); // 20
+    }
+
+    console.log(z); // 10 (different variable than inside if block)
+
+    // z = 30; // TypeError (cannot reassign a const variable)
+}
+exampleConst();*/
+
+/* SUMMARY
+
+1. Use var for function-scoped or globally-scoped variables (not recommended in modern JS).
+
+2. Use let for block-scoped variables that may need to be reassigned.
+
+3. Use const for block-scoped variables that should not be reassigned.
+*/
