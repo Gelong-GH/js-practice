@@ -13,5 +13,3 @@ if (user_password === password) {
   // If password does not match, show an error message
   alert("Access Denied. Unidentified User!!");
 }
-identified User.");
-}
